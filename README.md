@@ -1,99 +1,29 @@
-# claude-agents
-Playing with Claude Code Agents
+# Agent Orchestration & Workflow Guide
 
-Different types of useful agents:
+## Available Agents
 
-- Backend-architect (Set up database schema and API’s)
-- Backend-developer (Develop and build backend scripts and code)
-- Frontend-developer (Create user interface components)
-- Payment-integrator (Add Stripe payment processing)
-- Deployment-engineer (Set up CI/CD and hosting)
+### Discovery & Planning
+- **[codebase-analyzer](.claude/agents/codebase-analyzer.md)** - Analyze existing codebases, document structure, identify patterns, and understand tech stacks. Run first when working with existing projects.
+- **[planning-innovation-specialist](.claude/agents/planning-innovation-specialist.md)** - Create PRDs, define requirements, prioritize features, and design user flows. Use when starting new projects or features.
+- **[web-research-specialist](.claude/agents/web-research-specialist.md)** - Conduct market research, competitive analysis, technology evaluation, and find documentation. Available at any phase.
 
-Claude Code Core Production Agents
+### Architecture & Design
+- **[enterprise-architect](.claude/agents/enterprise-architect.md)** - Design system-wide technical architecture including microservices, resilience patterns, CQRS, and create ADRs. Works with PRDs from planning-innovation-specialist.
+- **[api-integration-architect](.claude/agents/api-integration-architect.md)** - Design API contracts, versioning strategies, OpenAPI specifications, and gateway configuration. Focuses on REST/GraphQL/gRPC endpoint design.
+- **[ui-ux-design-expert](.claude/agents/ui-ux-design-expert.md)** - Create wireframes, mockups, design systems, and interaction specifications. Receives PRDs and produces designs for frontend implementation.
+- **[database-data-expert](.claude/agents/database-data-expert.md)** - Design database schemas, create migrations, optimize queries, and plan disaster recovery. Works with architecture guidance.
 
-Color Psychology for Agent Types
-For reference, here's how I'd color-code your agent suite:
+### Implementation
+- **[nextjs-frontend-engineer](.claude/agents/nextjs-frontend-engineer.md)** - Implement frontend code in Next.js, Tailwind CSS, and Shadcn/UI. Builds production-ready React components from design specifications.
+- **[devops-infrastructure](.claude/agents/devops-infrastructure.md)** - Implement CI/CD pipelines, containerization with Docker, Kubernetes deployments, Infrastructure as Code, and monitoring setup.
 
-🔵 Architecture Agent - Deep Blue (stability, structure)
-🟢 Planning Agent - Green (growth, creativity, ideation)
-🟡 Code Quality Agent - Amber (warning, review, caution)
-🔴 Security Agent - Red (protection, alerts, critical)
-🟣 DevOps Agent - Purple (automation, orchestration)
-⚪ Testing Agent - White/Light Gray (clarity, validation)
-🟠 Documentation Agent - Orange (communication, guidance)
-🔷 Database Agent - Cyan (data, flow, storage)
+### Quality & Review
+- **[code-quality-standards](.claude/agents/code-quality-standards.md)** - Run automated code quality checks including linting, static analysis, complexity metrics, and pattern consistency validation.
+- **[code-review-expert](.claude/agents/code-review-expert.md)** - Provide human-style code review focused on design, SOLID principles, patterns, readability, and maintainability.
+- **[testing-qa-agent](.claude/agents/testing-qa-agent.md)** - Write unit, integration, and e2e tests. Analyze coverage and validate test pyramid structure.
+
+### Security & Documentation
+- **[security-compliance-auditor](.claude/agents/security-compliance-auditor.md)** - Perform security scanning, vulnerability assessment, and compliance verification (GDPR, SOC2, HIPAA, PCI-DSS). Available at any phase.
+- **[docs-maintainer](.claude/agents/docs-maintainer.md)** - Create and maintain API documentation, architecture diagrams, operational runbooks, and onboarding guides.
 
 
-For production-level enterprise software orchestration in Claude Code, here's the optimal agent setup:
-Core Production Agents
-
-1. Architecture Agent
-* Reviews system design decisions
-* Ensures adherence to enterprise patterns (microservices, event-driven, CQRS)
-* Validates scalability and fault tolerance
-* Maintains architectural decision records (ADRs)
-
-2. Code Quality & Standards Agent
-* Enforces coding standards and best practices
-* Runs static analysis and linting
-* Ensures consistent patterns across services
-* Reviews for security vulnerabilities (OWASP Top 10)
-
-3. Testing & QA Agent
-* Writes/maintains unit, integration, and e2e tests
-* Ensures test coverage meets thresholds (typically 80%+)
-* Validates test pyramid structure
-* Manages test data and fixtures
-
-4. DevOps & Infrastructure Agent
-* Manages CI/CD pipelines
-* Handles containerization (Docker/K8s)
-* Infrastructure as Code (Terraform/Pulumi)
-* Monitoring and observability setup
-
-5. Security & Compliance Agent
-* Security scanning and penetration testing
-* Dependency vulnerability checks
-* Ensures compliance with regulations (GDPR, SOC2, HIPAA)
-* Secrets management validation
-
-6. API & Integration Agent
-* API design and versioning strategy
-* GraphQL/REST endpoint development
-* Service mesh and inter-service communication
-* API gateway configuration
-
-7. Database & Data Agent
-* Schema design and migrations
-* Query optimization
-* Data consistency and integrity
-* Backup and disaster recovery strategies
-
-8. Documentation Agent
-* Maintains technical documentation
-* API documentation (OpenAPI/Swagger)
-* System diagrams and runbooks
-* Onboarding guides
-
-Orchestration Strategy
-Lead Orchestrator Agent
-* Coordinates between specialized agents
-* Manages task delegation and priorities
-* Resolves conflicts between agent recommendations
-* Maintains overall project context
-
-Key Configuration Tips:
-1. Context Sharing: Ensure agents can access shared context files (architecture docs, standards guides)
-2. Handoff Points: Define clear boundaries where one agent hands off to another
-3. Review Checkpoints: Critical changes reviewed by multiple agents
-4. Rollback Procedures: Each agent understands how to safely revert changes
-5. Async Communication: Use event-driven patterns for agent coordination
-
-Suggested Tool Stack per Agent:
-* Architecture: PlantUML, C4 model diagrams
-* Code Quality: ESLint, Prettier, SonarQube
-* Testing: Jest, Playwright, k6
-* DevOps: GitHub Actions, ArgoCD, Datadog
-* Security: Snyk, OWASP ZAP, Vault
-
-This setup provides comprehensive coverage for enterprise development while maintaining clear separation of concerns and enabling effective orchestration.
