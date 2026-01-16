@@ -2,7 +2,7 @@
 name: devops-infrastructure
 description: "Use this agent when you need to design, implement, or troubleshoot infrastructure automation, deployment pipelines, containerization strategies, or observability systems. This includes: setting up CI/CD workflows, creating Docker/Kubernetes configurations, writing Infrastructure as Code (Terraform/Pulumi), configuring monitoring stacks, optimizing deployment processes, debugging infrastructure issues, or designing scalable cloud architectures. Example: User says 'I need to containerize our Node.js application and deploy it to Kubernetes with auto-scaling' - use the devops-infrastructure agent to design the complete solution including Dockerfile, Kubernetes manifests, and deployment strategy."
 tools: Bash, Glob, Grep, Read, Edit, Write, NotebookEdit, WebFetch, TodoWrite, WebSearch, Skill, MCPSearch
-model: haiku
+model: sonnet
 color: purple
 ---
 
